@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { Chart, registerables } from 'chart.js';
-import { Doughnut, Bar } from 'vue-chartjs';
+// import { Doughnut, Bar } from 'vue-chartjs';
 
 // Register Chart.js components
 Chart.register(...registerables);
 
 // Data for charts
-const genderData = {
-  labels: ['Male', 'Female'],
-  datasets: [
-    {
-      backgroundColor: ['#43a047', '#7cb342'],
-      data: [128, 120]
-    }
-  ]
-};
+// const genderData = {
+//   labels: ['Male', 'Female'],
+//   datasets: [
+//     {
+//       backgroundColor: ['#43a047', '#7cb342'],
+//       data: [128, 120]
+//     }
+//   ]
+// };
 
 const ageData = {
   labels: ['0-12', '13-17', '18-30', '31-45', '46-60', '60+'],
@@ -30,26 +30,26 @@ const ageData = {
   ]
 };
 
-const occupationData = {
-  labels: ['Private Sector', 'Business Owner', 'Student', 'Civil Servant', 'Retired', 'Other'],
-  datasets: [
-    {
-      backgroundColor: ['#43a047', '#66bb6a', '#81c784', '#a5d6a7', '#c8e6c9', '#e8f5e9'],
-      data: [96, 42, 60, 30, 15, 5]
-    }
-  ]
-};
+// const occupationData = {
+//   labels: ['Private Sector', 'Business Owner', 'Student', 'Civil Servant', 'Retired', 'Other'],
+//   datasets: [
+//     {
+//       backgroundColor: ['#43a047', '#66bb6a', '#81c784', '#a5d6a7', '#c8e6c9', '#e8f5e9'],
+//       data: [96, 42, 60, 30, 15, 5]
+//     }
+//   ]
+// };
 
 // Chart options
-const doughnutOptions = {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      position: 'bottom'
-    }
-  }
-};
+// const doughnutOptions = {
+//   responsive: true,
+//   maintainAspectRatio: false,
+//   plugins: {
+//     legend: {
+//       position: 'bottom'
+//     }
+//   }
+// };
 
 const barOptions = {
   responsive: true,
@@ -198,9 +198,9 @@ const stats = [
           <!-- Gender Distribution -->
           <div class="bg-white rounded-lg shadow-md p-6">
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Gender Distribution</h3>
-            <div class="h-64">
+            <!-- <div class="h-64">
               <Doughnut :data="genderData" :options="doughnutOptions" />
-            </div>
+            </div> -->
             <div class="mt-4 text-center">
               <div class="inline-flex items-center mr-4">
                 <div class="w-3 h-3 bg-primary-600 rounded-full mr-2"></div>
@@ -224,9 +224,9 @@ const stats = [
           <!-- Occupation -->
           <div class="bg-white rounded-lg shadow-md p-6">
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Occupation</h3>
-            <div class="h-64">
+            <!-- <div class="h-64">
               <Doughnut :data="occupationData" :options="doughnutOptions" />
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
