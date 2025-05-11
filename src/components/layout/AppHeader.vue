@@ -9,19 +9,19 @@ const isAboutDropdownOpen = ref(false)
 
 // Navigation items
 const navItems = [
-  { name: 'Home', path: '/' },
+  { name: 'Beranda', path: '/' },
   { 
-    name: 'About Us', 
+    name: 'Tentang RT05', 
     path: '/about',
     dropdown: true,
     children: [
-      { name: 'Organizational Structure', path: '/about/organizational-structure' },
-      { name: 'Citizen Map', path: '/about/citizen-map' }
+      { name: 'Struktur Organisasi', path: '/about/organizational-structure' },
+      { name: 'Denah Warga', path: '/about/citizen-map' }
     ]
   },
-  { name: 'Services', path: '/services' },
-  { name: 'Agenda', path: '/agenda' },
-  { name: 'News', path: '/news' },
+  { name: 'Layanan', path: '/services' },
+  { name: 'Kegiatan', path: '/agenda' },
+  { name: 'Berita', path: '/news' },
 ]
 
 // Check if the route is active
@@ -87,7 +87,7 @@ const headerClass = computed(() => {
         <div class="flex items-center">
           <router-link to="/" class="flex items-center space-x-2">
             <span class="text-primary-700 text-2xl font-bold">Wargalima</span>
-            <span class="text-xs bg-primary-100 text-primary-800 px-2 py-1 rounded-full">RT 5 Gading Junti</span>
+            <span class="text-xs bg-primary-100 text-primary-800 px-2 py-1 rounded-full">RT 05 Gading Junti Asri</span>
           </router-link>
         </div>
 
@@ -137,7 +137,7 @@ const headerClass = computed(() => {
 
           <!-- CTA Button -->
           <router-link to="/login" class="btn btn-primary">
-            Citizen Portal
+            Lapor
           </router-link>
         </div>
 
