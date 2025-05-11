@@ -1,11 +1,11 @@
 <script setup lang="ts">
-interface ServiceItem {
-  id: number;
-  icon: string;
-  title: string;
-  description: string;
-  link: string;
-}
+// interface ServiceItem {
+//   id: number;
+//   icon: string;
+//   title: string;
+//   description: string;
+//   link: string;
+// }
 
 const services = [
   {

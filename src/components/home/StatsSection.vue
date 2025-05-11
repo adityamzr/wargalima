@@ -64,7 +64,7 @@ onMounted(() => {
 });
 
 const animateStats = () => {
-  stats.value.forEach((stat, index) => {
+  stats.value.forEach((stat) => {
     const interval = setInterval(() => {
       if (stat.value < stat.target) {
         // Increment faster for larger values to keep animation time consistent

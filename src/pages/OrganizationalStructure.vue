@@ -346,7 +346,7 @@ const closeMemberDetails = () => {
           
           <!-- Departments -->
           <div class="space-y-16">
-            <div v-for="(department, index) in departments.slice(2)" :key="department.name">
+            <div v-for="(department) in departments.slice(2)" :key="department.name">
               <div class="text-center mb-8">
                 <h2 class="text-2xl font-bold text-gray-800 mb-2">{{ department.name }} Department</h2>
                 <div class="w-20 h-1 bg-primary-600 mx-auto"></div>

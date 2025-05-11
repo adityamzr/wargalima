@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import HeroBanner from '../components/home/HeroBanner.vue';
 import NewsSection from '../components/home/NewsSection.vue';
 import StatsSection from '../components/home/StatsSection.vue';

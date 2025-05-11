@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import AppHeader from './components/layout/AppHeader.vue'
 import AppFooter from './components/layout/AppFooter.vue'
 import { useRouter } from 'vue-router'
@@ -9,7 +9,7 @@ const router = useRouter()
 
 onMounted(() => {
   setTimeout(() => {
-    isLoading.ref = false
+    isLoading.value = false
   }, 500)
   
   router.afterEach(() => {
