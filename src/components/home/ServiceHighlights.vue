@@ -43,9 +43,9 @@ const services = [
   <section class="section-padding bg-white">
     <div class="container mx-auto container-padding">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Services</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Layanan Kami</h2>
         <p class="text-gray-600 max-w-2xl mx-auto">
-          We provide various services to make community living easier and more connected
+          Kami menyediakan berbagai layanan untuk mempermudah dan mempererat kehidupan bermasyarakat.
         </p>
       </div>
       

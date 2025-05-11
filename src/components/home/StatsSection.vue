@@ -17,32 +17,32 @@ const stats = ref<StatItem[]>([
     icon: 'users',
     value: 0,
     target: 248,
-    title: 'Total Citizens',
-    suffix: 'People'
+    title: 'Jumlah Penduduk',
+    suffix: 'Orang'
   },
   {
     id: 2,
     icon: 'home',
     value: 0,
     target: 62,
-    title: 'Households',
-    suffix: 'Houses'
+    title: 'Rumah Tangga',
+    suffix: 'Rumah'
   },
   {
     id: 3,
     icon: 'calendar',
     value: 0,
     target: 24,
-    title: 'Events This Year',
-    suffix: 'Events'
+    title: 'Kegiatan Tahun Ini',
+    suffix: 'Kegiatan'
   },
   {
     id: 4,
     icon: 'document',
     value: 0,
     target: 156,
-    title: 'Documents Processed',
-    suffix: 'Files'
+    title: 'Dokumen Terproses',
+    suffix: 'Dokumen'
   }
 ]);
 
@@ -82,9 +82,9 @@ const animateStats = () => {
   <section class="stats-section section-padding bg-gray-50">
     <div class="container mx-auto container-padding">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Community Statistics</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Statistik Warga RT 05</h2>
         <p class="text-gray-600 max-w-2xl mx-auto">
-          A glimpse into our thriving community at RT 5 Gading Junti, showcasing our growth and activities.
+          Sekilas tentang warga kami yang berkembang di RT 05 Gading Junti Asri, menampilkan pertumbuhan dan aktivitas kami.
         </p>
       </div>
       
@@ -122,8 +122,8 @@ const animateStats = () => {
             </span>
           </div>
           
-          <h3 class="text-lg font-semibold text-gray-700">{{ stat.title }}</h3>
-          <p v-if="stat.suffix" class="text-sm text-gray-500 mt-1">{{ stat.suffix }}</p>
+          <p v-if="stat.suffix" class="text-sm text-gray-500">{{ stat.suffix }}</p>
+          <h3 class="text-lg font-semibold text-gray-700 mt-1">{{ stat.title }}</h3>
         </div>
       </div>
     </div>

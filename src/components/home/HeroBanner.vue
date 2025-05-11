@@ -10,7 +10,7 @@ const slides = ref([
     image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     title: 'Welcome to Wargalima RT 5 Gading Junti',
     subtitle: 'Your integrated neighborhood information system',
-    buttonText: 'Learn More',
+    buttonText: 'Tentang RT 05',
     buttonLink: '/about'
   },
   {
@@ -18,7 +18,7 @@ const slides = ref([
     image: 'https://images.pexels.com/photos/7014337/pexels-photo-7014337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     title: 'Community Services at Your Fingertips',
     subtitle: 'Easy access to letters, permissions, and neighborhood information',
-    buttonText: 'View Services',
+    buttonText: 'Lihat Layanan',
     buttonLink: '/services'
   },
   {
@@ -26,7 +26,7 @@ const slides = ref([
     image: 'https://images.pexels.com/photos/296115/pexels-photo-296115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     title: 'Stay Updated with Community Events',
     subtitle: 'Never miss important announcements and gatherings',
-    buttonText: 'View Agenda',
+    buttonText: 'Lihat Kegiatan',
     buttonLink: '/agenda'
   }
 ]);
@@ -43,7 +43,7 @@ const prevSlide = () => {
 
 onMounted(() => {
   // Auto-rotate slides every 5 seconds
-  const interval = setInterval(nextSlide, 5000);
+  const interval = setInterval(nextSlide, 8000);
   
   // Clean up on unmount
   return () => clearInterval(interval);
@@ -70,7 +70,7 @@ const navigateToSlideLink = (link: string) => {
     </div>
     
     <!-- Slide Content -->
-    <div class="container mx-auto px-4 h-full flex items-center relative z-10">
+    <div class="container mx-auto px-4 md:px-8 lg:px-10 h-full flex items-center relative z-10">
       <div class="max-w-3xl">
         <transition name="slide-up" mode="out-in">
           <div :key="currentSlide" class="text-white">
@@ -88,7 +88,7 @@ const navigateToSlideLink = (link: string) => {
                 {{ slides[currentSlide].buttonText }}
               </button>
               <router-link to="/login" class="btn bg-white text-primary-700 hover:bg-gray-100">
-                Citizen Portal
+                Lapor atau Pengajuan
               </router-link>
             </div>
           </div>
@@ -97,7 +97,7 @@ const navigateToSlideLink = (link: string) => {
     </div>
     
     <!-- Navigation Arrows -->
-    <button
+    <!-- <button
       @click="prevSlide"
       class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full transition-all duration-300 z-20"
     >
@@ -112,7 +112,7 @@ const navigateToSlideLink = (link: string) => {
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
       </svg>
-    </button>
+    </button> -->
     
     <!-- Slide Indicators -->
     <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">

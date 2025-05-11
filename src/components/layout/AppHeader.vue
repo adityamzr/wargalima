@@ -11,7 +11,7 @@ const isAboutDropdownOpen = ref(false)
 const navItems = [
   { name: 'Beranda', path: '/' },
   { 
-    name: 'Tentang RT05', 
+    name: 'Tentang Kami', 
     path: '/about',
     dropdown: true,
     children: [
@@ -137,7 +137,7 @@ const headerClass = computed(() => {
 
           <!-- CTA Button -->
           <router-link to="/login" class="btn btn-primary">
-            Lapor
+            Lapor atau Pengajuan
           </router-link>
         </div>
 
@@ -203,7 +203,7 @@ const headerClass = computed(() => {
         <!-- Mobile CTA Button -->
         <div class="pt-2">
           <router-link to="/login" class="btn btn-primary w-full" @click="isMobileMenuOpen = false">
-            Citizen Portal
+            Lapor atau Pengajuan
           </router-link>
         </div>
       </nav>
