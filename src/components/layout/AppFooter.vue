@@ -37,7 +37,10 @@ const socialLinks = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
         <!-- About -->
         <div>
-          <h3 class="text-xl font-bold mb-4">Wargalima</h3>
+          <div class="flex">
+            <h3 class="text-xl font-bold mb-4">Wargalima</h3>
+            <img src="/logo.png" alt="" class="w-6 h-6 mx-1">
+          </div>
           <p class="text-gray-400 mb-4">
             Sistem informasi terintegrasi untuk warga RT 05 RW 05 Gading Junti Asri yang menyediakan layanan dan informasi kependudukan dalam satu tempat.
           </p>
