@@ -118,7 +118,7 @@ const upcomingAgenda = agendaItems.value.filter(item => item.isUpcoming);
               </div>
               
               <div class="mt-4 md:mt-0 self-end md:self-center">
-                <router-link :to="`/agenda/${item.id}`" class="btn btn-outline py-2 px-4">
+                <router-link :to="`/agenda#${item.id}`" class="btn btn-outline py-2 px-4">
                   Details
                 </router-link>
               </div>

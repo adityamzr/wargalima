@@ -44,8 +44,8 @@ const news = ref<NewsItem[]>([
   }
 ]);
 
-const navigateToNews = (url: string) => {
-  router.push(url);
+const navigateToNews = (id: number) => {
+  router.push("/news#"+id);
 };
 </script>
 
@@ -65,7 +65,7 @@ const navigateToNews = (url: string) => {
           v-for="item in news" 
           :key="item.id" 
           class="card group cursor-pointer"
-          @click="navigateToNews(item.url)"
+          @click="navigateToNews(item.id)"
         >
           <div class="relative h-48 overflow-hidden">
             <img 

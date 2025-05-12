@@ -9,6 +9,12 @@ interface Service {
   steps: string[];
 }
 
+interface faq {
+  id: number;
+  question: string;
+  answer: string;
+}
+
 const services = ref<Service[]>([
   {
     id: 'letters',
@@ -64,6 +70,33 @@ const services = ref<Service[]>([
   }
 ]);
 
+const faq = ref<faq[]>([
+  {
+    id: 1,
+    question: "How quickly will my letter request be processed?",
+    answer:
+      "Most letter requests are processed within 1-3 working days. Urgent requests may be processed more quickly depending on availability. You can track the status of your request in the Citizen Portal.",
+  },
+  {
+    id: 2,
+    question: "Is there a fee for using these services?",
+    answer:
+      "Basic services on the Wargalima platform are provided free of charge to all residents of RT 5 Gading Junti. Some specialized services may have administrative fees as per local regulations, which will be clearly indicated before processing.",
+  },
+  {
+    id: 3,
+    question: "What documents do I need for new resident registration?",
+    answer:
+      "New residents need to provide: a copy of their ID card (KTP), family card (KK), a recent photograph, and proof of residence (such as a property deed or rental agreement). Additional documents may be required depending on your specific situation.",
+  },
+  {
+    id: 4,
+    question: "How do I report an urgent security concern?",
+    answer:
+      "For urgent security concerns, please contact the security coordinator directly at the emergency number provided in your citizen portal. For non-urgent issues, you can use the reporting feature on the platform.",
+  },
+]);
+
 const activeTab = ref('letters');
 
 // Handle hash navigation
@@ -95,9 +128,9 @@ const setActiveTab = (tabId: string) => {
       <div class="absolute inset-0 bg-opacity-70 bg-gray-900"></div>
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="max-w-3xl mx-auto text-center">
-          <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Layanan Kami</h1>
           <p class="text-xl text-white text-opacity-90 mb-8">
-            Explore the range of services available to residents of RT 5 Gading Junti
+            Jelajahi berbagai layanan yang tersedia bagi warga RT 05 Gading Junti Asri.
           </p>
           <router-link to="/login" class="btn bg-white text-primary-700 hover:bg-gray-100">
             Access Citizen Portal
@@ -110,9 +143,9 @@ const setActiveTab = (tabId: string) => {
     <section class="py-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-12 text-center">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Available Services</h2>
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Layanan Tersedia</h2>
           <p class="text-gray-600 max-w-3xl mx-auto">
-            Our platform provides a variety of digital services designed to simplify administrative processes and enhance community engagement.
+            Platform kami menyediakan berbagai layanan digital yang dirancang untuk mempermudah proses administrasi dan meningkatkan keterlibatan masyarakat.
           </p>
         </div>
         
@@ -205,65 +238,23 @@ const setActiveTab = (tabId: string) => {
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Daftar Pertanyaan Umum</h2>
           <p class="text-gray-600 max-w-2xl mx-auto">
-            Find answers to common questions about our services
+            Temukan jawaban untuk pertanyaan yang sering diajukan pada layanan kami
           </p>
         </div>
         
         <div class="max-w-3xl mx-auto space-y-4">
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+          <div v-for="item in faq" class="bg-white rounded-lg shadow-sm overflow-hidden">
             <details class="group">
               <summary class="flex items-center justify-between cursor-pointer p-6">
-                <h3 class="text-lg font-medium text-gray-800">How quickly will my letter request be processed?</h3>
+                <h3 class="text-lg font-medium text-gray-800">{{ item.question }}</h3>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
               </summary>
               <div class="px-6 pb-6 text-gray-600">
-                Most letter requests are processed within 1-3 working days. Urgent requests may be processed more quickly depending on availability. You can track the status of your request in the Citizen Portal.
-              </div>
-            </details>
-          </div>
-          
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-            <details class="group">
-              <summary class="flex items-center justify-between cursor-pointer p-6">
-                <h3 class="text-lg font-medium text-gray-800">Is there a fee for using these services?</h3>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600">
-                Basic services on the Wargalima platform are provided free of charge to all residents of RT 5 Gading Junti. Some specialized services may have administrative fees as per local regulations, which will be clearly indicated before processing.
-              </div>
-            </details>
-          </div>
-          
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-            <details class="group">
-              <summary class="flex items-center justify-between cursor-pointer p-6">
-                <h3 class="text-lg font-medium text-gray-800">What documents do I need for new resident registration?</h3>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600">
-                New residents need to provide: a copy of their ID card (KTP), family card (KK), a recent photograph, and proof of residence (such as a property deed or rental agreement). Additional documents may be required depending on your specific situation.
-              </div>
-            </details>
-          </div>
-          
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-            <details class="group">
-              <summary class="flex items-center justify-between cursor-pointer p-6">
-                <h3 class="text-lg font-medium text-gray-800">How do I report an urgent security concern?</h3>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600">
-                For urgent security concerns, please contact the security coordinator directly at the emergency number provided in your citizen portal. For non-urgent issues, you can use the reporting feature on the platform.
+                {{ item.answer }}
               </div>
             </details>
           </div>

@@ -16,7 +16,7 @@ const orgMembers = ref<OrgMember[]>([
   {
     id: 1,
     name: 'Budi Santoso',
-    position: 'RT Head',
+    position: 'Ketua RT',
     email: 'budi.santoso@wargalima-rt5.id',
     phone: '+62 812-3456-7890',
     image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
@@ -279,9 +279,9 @@ const closeMemberDetails = () => {
         <div class="absolute inset-0 bg-opacity-70 bg-gray-900"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="max-w-3xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Organizational Structure</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Struktur Organisasi</h1>
             <p class="text-xl text-white text-opacity-90 mb-8">
-              Meet the dedicated team managing RT 5 Gading Junti administration
+              Temui tim berdedikasi yang mengelola administrasi di RT 05 Gading Junti Asri.
             </p>
           </div>
         </div>
@@ -291,7 +291,7 @@ const closeMemberDetails = () => {
       <section class="py-16">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Structure</h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Struktur Kami</h2>
             <p class="text-gray-600 max-w-2xl mx-auto">
               Our neighborhood is organized into specialized departments, each managed by dedicated coordinators who work together under the RT leadership.
             </p>
@@ -299,7 +299,7 @@ const closeMemberDetails = () => {
           
           <div class="relative mb-20">
             <!-- RT Head (Top) -->
-            <div class="flex justify-center mb-16">
+            <div class="flex justify-center mb-20">
               <div 
                 class="bg-primary-700 rounded-lg shadow-lg p-6 text-white text-center w-64 cursor-pointer hover:shadow-xl transition-all duration-300"
                 @click="showMemberDetails(orgMembers[0])"
@@ -317,7 +317,7 @@ const closeMemberDetails = () => {
             </div>
             
             <!-- Core Team (Second Level) -->
-            <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 mb-16">
+            <div class="relative flex flex-col md:flex-row justify-center items-center md:items-start gap-8 mb-16">
               <div 
                 v-for="member in orgMembers.slice(1, 4)" 
                 :key="member.id"
@@ -337,11 +337,11 @@ const closeMemberDetails = () => {
             </div>
             
             <!-- Connect lines (visible only on md and up) -->
-            <div class="hidden md:block absolute top-[104px] left-1/2 w-0.5 h-12 bg-gray-300"></div>
-            <div class="hidden md:block absolute top-52 left-1/4 w-1/2 h-0.5 bg-gray-300"></div>
-            <div class="hidden md:block absolute top-52 left-1/4 w-0.5 h-12 bg-gray-300"></div>
-            <div class="hidden md:block absolute top-52 left-1/2 w-0.5 h-12 bg-gray-300"></div>
-            <div class="hidden md:block absolute top-52 left-3/4 w-0.5 h-12 bg-gray-300"></div>
+            <div class="hidden md:block absolute top-52 left-1/2 w-0.5 h-12 bg-gray-300 -z-10"></div>
+            <div class="hidden md:block absolute top-60 left-1/4 w-1/2 h-0.5 bg-gray-300"></div>
+            <div class="hidden md:block absolute top-60 left-1/4 w-0.5 h-12 bg-gray-300"></div>
+            <div class="hidden md:block absolute top-60 left-1/2 w-0.5 h-12 bg-gray-300"></div>
+            <div class="hidden md:block absolute top-60 left-3/4 w-0.5 h-12 bg-gray-300"></div>
           </div>
           
           <!-- Departments -->

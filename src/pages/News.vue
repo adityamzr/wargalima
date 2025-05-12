@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 
 interface NewsItem {
   id: number;
@@ -93,14 +93,34 @@ const setCategory = (category: string) => {
 // Show full news content
 const selectedNews = ref<NewsItem | null>(null);
 
-const showNewsDetail = (news: NewsItem) => {
-  selectedNews.value = news;
-  // Scroll to top when opening news detail
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+onMounted(() => {
+  const hash = window.location.hash.substring(1);
+  const idFromHash = parseInt(hash);
+  if (!isNaN(idFromHash)) {
+    showNewsDetail(idFromHash);
+  }
+});
+
+window.addEventListener('hashchange', () => {
+  const hash = window.location.hash.substring(1);
+  const idFromHash = parseInt(hash);
+  if (!isNaN(idFromHash)) {
+    showNewsDetail(idFromHash);
+  }
+});
+
+
+const showNewsDetail = (newsId: number) => {
+  const news = newsItems.value.find(item => item.id === newsId);
+  if (news) {
+    selectedNews.value = news;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 };
 
 const closeNewsDetail = () => {
   selectedNews.value = null;
+  history.replaceState(null, '', window.location.pathname);
 };
 </script>
 
@@ -126,12 +146,14 @@ const closeNewsDetail = () => {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 mr-2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
               </svg>
-              Back to News
+              Kembali ke Berita
             </button>
             
-            <span class="inline-block px-3 py-1 bg-primary-600 text-white text-sm font-medium rounded-full mb-4">
-              {{ selectedNews.category }}
-            </span>
+            <div>
+              <span class="inline-block px-3 py-1 bg-primary-600 text-white text-sm font-medium rounded-full mb-4">
+                {{ selectedNews.category }}
+              </span>
+            </div>
             
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
               {{ selectedNews.title }}
@@ -160,7 +182,7 @@ const closeNewsDetail = () => {
               @click="closeNewsDetail" 
               class="btn btn-outline"
             >
-              Back to News List
+              Kembali ke Daftar Berita
             </button>
           </div>
         </div>
@@ -174,9 +196,9 @@ const closeNewsDetail = () => {
         <div class="absolute inset-0 bg-opacity-70 bg-gray-900"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="max-w-3xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">News & Updates</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Berita Terbaru</h1>
             <p class="text-xl text-white text-opacity-90 mb-8">
-              Stay informed about the latest happenings in our neighborhood
+              Jangan lewatkan kabar terkini dari lingkungan kita
             </p>
           </div>
         </div>
@@ -209,7 +231,7 @@ const closeNewsDetail = () => {
               v-for="news in filteredNews" 
               :key="news.id" 
               class="card group cursor-pointer"
-              @click="showNewsDetail(news)"
+              @click="showNewsDetail(news.id)"
             >
               <div class="relative h-48 overflow-hidden">
                 <img 

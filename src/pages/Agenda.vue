@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 
 interface Event {
   id: number;
@@ -109,14 +109,34 @@ const filteredEvents = computed(() => {
 // Selected event for details
 const selectedEvent = ref<Event | null>(null);
 
-const showEventDetails = (event: Event) => {
-  selectedEvent.value = event;
-  // Scroll to top when showing details
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+onMounted(() => {
+  const hash = window.location.hash.substring(1);
+  const idFromHash = parseInt(hash);
+  if (!isNaN(idFromHash)) {
+    showEventDetails(idFromHash);
+  }
+});
+
+window.addEventListener('hashchange', () => {
+  const hash = window.location.hash.substring(1);
+  const idFromHash = parseInt(hash);
+  if (!isNaN(idFromHash)) {
+    showEventDetails(idFromHash);
+  }
+});
+
+
+const showEventDetails = (eventId: number) => {
+  const event = events.value.find(item => item.id === eventId)
+  if(event){
+    selectedEvent.value = event;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 };
 
 const closeEventDetails = () => {
   selectedEvent.value = null;
+  history.replaceState(null, '', window.location.pathname);
 };
 
 // Add to calendar function (placeholder)
@@ -150,7 +170,7 @@ const addToCalendar = (event: Event) => {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 mr-2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
-            Back to Agenda
+            Kembali ke Kegiatan
           </button>
           
           <div class="flex flex-col md:flex-row items-start md:items-center justify-between">
@@ -254,7 +274,7 @@ const addToCalendar = (event: Event) => {
                 @click="closeEventDetails" 
                 class="btn btn-outline"
               >
-                Back to Events List
+                Kembali ke Daftar Kegiatan
               </button>
             </div>
           </div>
@@ -269,9 +289,9 @@ const addToCalendar = (event: Event) => {
         <div class="absolute inset-0 bg-opacity-70 bg-gray-900"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="max-w-3xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Community Agenda</h1>
-            <p class="text-xl text-white text-opacity-90 mb-8">
-              Stay updated on all upcoming events and activities in our neighborhood
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Kegiatan RT 05</h1>
+            <p class="text-xl text-white text-opacity-90 mb-6">
+              Tetap terinformasi tentang semua acara dan kegiatan yang akan datang di lingkungan kita
             </p>
           </div>
         </div>
@@ -317,7 +337,7 @@ const addToCalendar = (event: Event) => {
               v-for="event in filteredEvents" 
               :key="event.id"
               class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg group cursor-pointer"
-              @click="showEventDetails(event)"
+              @click="showEventDetails(event.id)"
             >
               <div class="flex flex-col md:flex-row">
                 <!-- Date Column -->
