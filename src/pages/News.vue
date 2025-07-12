@@ -109,7 +109,6 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-
 const showNewsDetail = (newsId: number) => {
   const news = newsItems.value.find(item => item.id === newsId);
   if (news) {
