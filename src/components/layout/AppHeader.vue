@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-import { useRouter } from 'vue-router'
+// import { useRouter } from 'vue-router'
 
-const router = useRouter()
+// const router = useRouter()
+// const isAboutDropdownOpen = ref(false)
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
-const isAboutDropdownOpen = ref(false)
 
 // Navigation items
 // const navItems = [
@@ -26,23 +26,23 @@ const isAboutDropdownOpen = ref(false)
 // ]
 
 // Check if the route is active
-const isActiveRoute = (path: string) => {
-  return router.currentRoute.value.path === path
-}
+// const isActiveRoute = (path: string) => {
+//   return router.currentRoute.value.path === path
+// }
 
 // Toggle mobile menu
-const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value
-  if (isMobileMenuOpen.value) {
-    isAboutDropdownOpen.value = false
-  }
-}
+// const toggleMobileMenu = () => {
+//   isMobileMenuOpen.value = !isMobileMenuOpen.value
+//   if (isMobileMenuOpen.value) {
+//     isAboutDropdownOpen.value = false
+//   }
+// }
 
 // Toggle about dropdown
-const toggleAboutDropdown = (event: Event) => {
-  event.preventDefault()
-  isAboutDropdownOpen.value = !isAboutDropdownOpen.value
-}
+// const toggleAboutDropdown = (event: Event) => {
+//   event.preventDefault()
+//   isAboutDropdownOpen.value = !isAboutDropdownOpen.value
+// }
 
 // Close mobile menu when clicking outside
 const closeMobileMenu = (event: MouseEvent) => {
