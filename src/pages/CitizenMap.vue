@@ -364,12 +364,12 @@ const closeFamilyDetail = () => {
     </div>
     <div v-else>
       <!-- Hero Section -->
-      <section class="relative bg-primary-700 text-white py-20 md:py-28">
+      <section class="relative bg-primary-700 text-white py-12 md:py-28">
         <div class="absolute inset-0 bg-opacity-70 bg-gray-900"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="max-w-3xl mx-auto text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-6">Denah Warga</h1>
-            <p class="text-xl text-white text-opacity-90 mb-8">
+            <p class="text-xl text-white text-opacity-90">
               Jelajahi informasi geografis dan demografis RT 05 Gading Junti Asri
             </p>
           </div>
@@ -419,9 +419,6 @@ const closeFamilyDetail = () => {
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-8">
             <h2 class="text-3xl font-bold text-gray-800 mb-4">Denah Kependudukan</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-              Representasi visual wilayah RT 05 RW 05 Gading Junti Asri yang menunjukkan lokasi rumah warga.
-            </p>
           </div>
           
           <!-- Map Placeholder (in a real app, this would be an interactive map) -->
@@ -430,19 +427,19 @@ const closeFamilyDetail = () => {
             <div class="mb-6 grid grid-cols-2 md:grid-cols-4 gap-4">
               <div class="flex items-center">
                 <div class="w-4 h-4 bg-primary-600 rounded-full mr-2"></div>
-                <span class="text-sm text-gray-700">Zona 1</span>
+                <span class="text-[10px] md:text-sm text-gray-700">Zona 1 / Pak Opick</span>
               </div>
               <div class="flex items-center">
                 <div class="w-4 h-4 bg-secondary-500 rounded-full mr-2"></div>
-                <span class="text-sm text-gray-700">Zona 2</span>
+                <span class="text-[10px] md:text-sm text-gray-700">Zona 2 / Pak Yadi</span>
               </div>
               <div class="flex items-center">
                 <div class="w-4 h-4 bg-red-500 rounded-full mr-2"></div>
-                <span class="text-sm text-gray-700">Zona 3</span>
+                <span class="text-[10px] md:text-sm text-gray-700">Zona 3 / Pak Purjoko</span>
               </div>
               <div class="flex items-center">
                 <div class="w-4 h-4 bg-blue-500 rounded-full mr-2"></div>
-                <span class="text-sm text-gray-700">Zona 4</span>
+                <span class="text-[10px] md:text-sm text-gray-700">Zona 4 / Pak Sriharyono</span>
               </div>
             </div>
             
@@ -560,110 +557,6 @@ const closeFamilyDetail = () => {
               </div>
             </div> -->
             
-          </div>
-        </div>
-      </section>
-      
-      <!-- Demographics Section -->
-      <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Demographics</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-              Statistical breakdown of our neighborhood's population and characteristics
-            </p>
-          </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Gender Distribution -->
-            <div class="bg-white rounded-lg shadow-md p-6">
-              <h3 class="text-xl font-semibold text-gray-800 mb-4">Gender Distribution</h3>
-              <!-- <div class="h-64">
-                <Doughnut :data="genderData" :options="doughnutOptions" />
-              </div> -->
-              <div class="mt-4 text-center">
-                <div class="inline-flex items-center mr-4">
-                  <div class="w-3 h-3 bg-primary-600 rounded-full mr-2"></div>
-                  <span class="text-sm text-gray-600">Male: 51.6%</span>
-                </div>
-                <div class="inline-flex items-center">
-                  <div class="w-3 h-3 bg-primary-300 rounded-full mr-2"></div>
-                  <span class="text-sm text-gray-600">Female: 48.4%</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Age Distribution -->
-            <div class="bg-white rounded-lg shadow-md p-6">
-              <h3 class="text-xl font-semibold text-gray-800 mb-4">Age Distribution</h3>
-              <div class="h-64">
-                <Bar :data="ageData" :options="barOptions" />
-              </div>
-            </div>
-            
-            <!-- Occupation -->
-            <div class="bg-white rounded-lg shadow-md p-6">
-              <h3 class="text-xl font-semibold text-gray-800 mb-4">Occupation</h3>
-              <!-- <div class="h-64">
-                <Doughnut :data="occupationData" :options="doughnutOptions" />
-              </div> -->
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Additional Information -->
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="max-w-4xl mx-auto">
-            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
-              <h2 class="text-2xl font-bold text-gray-800 mb-6">About Our Neighborhood</h2>
-              
-              <div class="space-y-6">
-                <div>
-                  <h3 class="text-lg font-semibold text-gray-800 mb-2">Location</h3>
-                  <p class="text-gray-600">
-                    RT 5 Gading Junti is located in the eastern part of the Gading district, bordered by RT 4 to the west, RT 6 to the east, and a small river to the south. The neighborhood spans approximately 0.25 square kilometers.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 class="text-lg font-semibold text-gray-800 mb-2">Facilities</h3>
-                  <p class="text-gray-600 mb-4">
-                    Our neighborhood is equipped with various facilities to support the daily needs of residents:
-                  </p>
-                  <ul class="list-disc pl-5 text-gray-600 space-y-1">
-                    <li>1 community hall for gatherings and events</li>
-                    <li>2 security posts at neighborhood entrances</li>
-                    <li>1 health post for basic healthcare</li>
-                    <li>1 community garden and park</li>
-                    <li>3 waste collection points</li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h3 class="text-lg font-semibold text-gray-800 mb-2">History</h3>
-                  <p class="text-gray-600">
-                    Established in 1985, RT 5 Gading Junti was originally a small farming community that has gradually developed into a residential area. The name "Gading Junti" comes from the abundance of coconut trees (gading) that used to grow in the area and "junti" which means "aligned" in the local dialect.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- CTA Section -->
-      <section class="py-16 bg-primary-600 text-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Access More Detailed Information</h2>
-            <p class="text-white text-opacity-90 text-lg mb-8">
-              Residents can access more detailed neighborhood maps, household directories, and demographic data through the Citizen Portal.
-            </p>
-            <router-link to="/login" class="btn bg-white text-primary-700 hover:bg-gray-100 text-lg">
-              Enter Citizen Portal
-            </router-link>
           </div>
         </div>
       </section>

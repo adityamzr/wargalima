@@ -88,7 +88,7 @@ const headerClass = computed(() => {
         <div class="flex items-center">
           <router-link to="/" class="flex items-center space-x-2">
             <span class="text-primary-700 text-2xl font-bold">Wargalima</span>
-            <span class="text-xs bg-primary-100 text-primary-800 px-2 py-1 rounded-full">RT 05 Gading Junti Asri</span>
+            <span class="text-xs bg-primary-100 text-primary-800 px-2 py-1 rounded-full">RT 05 RW 05 Gading Junti Asri</span>
           </router-link>
         </div>
       </div>

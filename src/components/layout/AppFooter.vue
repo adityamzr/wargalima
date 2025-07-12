@@ -7,14 +7,14 @@ const contactInfo = {
   phone: '+62 857 9809 7779',
 };
 
-const quickLinks = [
-  { name: 'Beranda', path: '/' },
-  { name: 'Tentang Kami', path: '/about' },
-  { name: 'Layanan', path: '/services' },
-  { name: 'Kegiatan', path: '/agenda' },
-  { name: 'Berita', path: '/news' },
-  { name: 'Lapor atau Pengajuan', path: '#' },
-];
+// const quickLinks = [
+//   { name: 'Beranda', path: '/' },
+//   { name: 'Tentang Kami', path: '/about' },
+//   { name: 'Layanan', path: '/services' },
+//   { name: 'Kegiatan', path: '/agenda' },
+//   { name: 'Berita', path: '/news' },
+//   { name: 'Lapor atau Pengajuan', path: '#' },
+// ];
 
 const servicesLinks = [
   { name: 'Administrative Letters', path: '/services#letters' },
@@ -94,7 +94,7 @@ const socialLinks = [
         </div>
         
         <!-- Quick Links -->
-        <div>
+        <!-- <div>
           <h3 class="text-xl font-bold mb-4">Navigasi</h3>
           <ul class="space-y-2">
             <li v-for="link in quickLinks" :key="link.name">
@@ -109,10 +109,10 @@ const socialLinks = [
               </router-link>
             </li>
           </ul>
-        </div>
+        </div> -->
         
         <!-- Services -->
-        <div>
+        <!-- <div>
           <h3 class="text-xl font-bold mb-4">Layanan</h3>
           <ul class="space-y-2">
             <li v-for="link in servicesLinks" :key="link.name">
@@ -127,7 +127,7 @@ const socialLinks = [
               </router-link>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
       
       <div class="pt-8 mt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
