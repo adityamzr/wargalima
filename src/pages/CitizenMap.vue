@@ -379,43 +379,43 @@ const closeFamilyDetail = () => {
       <!-- Stats Section -->
       <section class="py-12 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-4 gap-2 md:gap-6">
             <div 
               v-for="(stat, index) in stats" 
               :key="index" 
-              class="bg-gray-50 rounded-lg p-6 text-center hover:shadow-md transition-all duration-300"
+              class="bg-gray-50 rounded-lg p-2 text-center hover:shadow-md transition-all duration-300"
             >
-              <div class="mb-4 mx-auto w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center text-primary-600">
+              <div class="mb-4 mx-auto w-12 md:w-16 h-12 md:h-16 rounded-full bg-primary-100 flex items-center justify-center text-primary-600">
                 <!-- Users Icon -->
-                <svg v-if="stat.icon === 'users'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <svg v-if="stat.icon === 'users'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-8 md:h-8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                 </svg>
                 
                 <!-- Home Icon -->
-                <svg v-if="stat.icon === 'home'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <svg v-if="stat.icon === 'home'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-8 md:h-8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                 </svg>
                 
                 <!-- Family Icon -->
-                <svg v-if="stat.icon === 'family'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <svg v-if="stat.icon === 'family'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-8 md:h-8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                 </svg>
                 
                 <!-- Area Icon -->
-                <svg v-if="stat.icon === 'area'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <svg v-if="stat.icon === 'area'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-8 md:h-8">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
                 </svg>
               </div>
               
-              <div class="text-3xl font-bold text-gray-800 mb-2">{{ stat.value }}</div>
-              <div class="text-gray-600">{{ stat.label }}</div>
+              <div class="text-lg md:text-3xl font-bold text-gray-800 mb-2">{{ stat.value }}</div>
+              <div class="text-xs md:text-lg text-gray-600">{{ stat.label }}</div>
             </div>
           </div>
         </div>
       </section>
       
       <!-- Map Section -->
-      <section class="py-12 bg-gray-50">
+      <section class="py-8 md:py-12 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-8">
             <h2 class="text-3xl font-bold text-gray-800 mb-4">Denah Kependudukan</h2>
