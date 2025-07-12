@@ -17,19 +17,6 @@ Chart.register(...registerables);
 //   ]
 // };
 
-const ageData = {
-  labels: ['0-12', '13-17', '18-30', '31-45', '46-60', '60+'],
-  datasets: [
-    {
-      label: 'Number of Citizens',
-      backgroundColor: '#4caf50',
-      borderColor: '#388e3c',
-      borderWidth: 1,
-      data: [38, 22, 56, 72, 40, 20]
-    }
-  ]
-};
-
 // const occupationData = {
 //   labels: ['Private Sector', 'Business Owner', 'Student', 'Civil Servant', 'Retired', 'Other'],
 //   datasets: [
@@ -50,21 +37,6 @@ const ageData = {
 //     }
 //   }
 // };
-
-const barOptions = {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      display: false
-    }
-  },
-  scales: {
-    y: {
-      beginAtZero: true
-    }
-  }
-};
 
 // Map visualization placeholder
 onMounted(() => {
