@@ -16,12 +16,12 @@ const contactInfo = {
 //   { name: 'Lapor atau Pengajuan', path: '#' },
 // ];
 
-const servicesLinks = [
-  { name: 'Administrative Letters', path: '/services#letters' },
-  { name: 'Community Reporting', path: '/services#reporting' },
-  { name: 'Event Management', path: '/services#events' },
-  { name: 'Resident Registration', path: '/services#registration' },
-];
+// const servicesLinks = [
+//   { name: 'Administrative Letters', path: '/services#letters' },
+//   { name: 'Community Reporting', path: '/services#reporting' },
+//   { name: 'Event Management', path: '/services#events' },
+//   { name: 'Resident Registration', path: '/services#registration' },
+// ];
 
 const socialLinks = [
   { name: 'Tiktok', imgPath: '/tiktok.png', url: '' },
